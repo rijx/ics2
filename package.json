@@ -1,5 +1,5 @@
 {
-  "name": "ics",
+  "name": "ics2",
   "version": "3.8.1",
   "description": "iCal (ics) file generator",
   "exports": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adamgibbons/ics.git"
+    "url": "https://github.com/rijx/ics2.git"
   },
   "keywords": [
     "ical",
@@ -31,9 +31,9 @@
   "author": "Adam Gibbons <adam@agibbons.com> (http://agibbons.com/)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adamgibbons/ics/issues"
+    "url": "https://github.com/rijx/ics2/issues"
   },
-  "homepage": "https://github.com/adamgibbons/ics",
+  "homepage": "https://github.com/rijx/ics2",
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.23.2",

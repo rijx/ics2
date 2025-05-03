@@ -1,22 +1,22 @@
-ics
+ics2
 ==================
 
 The [iCalendar](http://tools.ietf.org/html/rfc5545) generator
 
-[![npm version](https://badge.fury.io/js/ics.svg)](http://badge.fury.io/js/ics)
-[![TravisCI build status](https://travis-ci.org/adamgibbons/ics.svg?branch=master)](https://travis-ci.org/adamgibbons/ics.svg?branch=master)
-[![Downloads](https://img.shields.io/npm/dm/ics.svg)](http://npm-stat.com/charts.html?package=ics)
+> [!NOTE]
+> 
+> This is a fork of the `ics` package to add additional functionality such as `SCHEDULE-AGENT` support.
 
 ## Install
 
-`npm install -S ics`
+`npm install -S ics2`
 
 ## Example Usage
 
 1) Create an iCalendar event:
 
 ```javascript
-const ics = require('ics')
+const ics = require('ics2')
 
 const event = {
   start: [2018, 5, 30, 6, 30],
@@ -74,7 +74,7 @@ ics.createEvent(event, (error, value) => {
 2) Write an iCalendar file:
 ```javascript
 const { writeFileSync } = require('fs')
-const ics = require('ics')
+const ics = require('ics2')
 
 ics.createEvent({
   title: 'Dinner',

@@ -61,4 +61,27 @@ describe('utils.setContact', () => {
     expect(setContact(contact2))
     .to.equal('RSVP=TRUE;DIR=https://example.com/contacts/adam;CN=Adam Gibbons:mailto:adam@example.com')
   })
+  it('set a contact with schedule-agent', () => {
+    const contact = { name: 'm-vinc', email: 'vinc@example.com' }
+    const contactUndefined = Object.assign({scheduleAgent: undefined}, contact)
+    const contactServer = Object.assign({scheduleAgent: 'SERVER'}, contact)
+    const contactClient = Object.assign({scheduleAgent: 'CLIENT'}, contact)
+    const contactNone = Object.assign({scheduleAgent: 'NONE'}, contact)
+    const contactXCustom = Object.assign({scheduleAgent: 'X-CUSTOM'}, contact)
+
+    expect(setContact(contactUndefined))
+    .to.equal('RSVP=FALSE;CN=m-vinc:mailto:vinc@example.com')
+
+    expect(setContact(contactServer))
+    .to.equal('RSVP=FALSE;SCHEDULE-AGENT=SERVER;CN=m-vinc:mailto:vinc@example.com')
+
+    expect(setContact(contactClient))
+    .to.equal('RSVP=FALSE;SCHEDULE-AGENT=CLIENT;CN=m-vinc:mailto:vinc@example.com')
+
+    expect(setContact(contactNone))
+    .to.equal('RSVP=FALSE;SCHEDULE-AGENT=NONE;CN=m-vinc:mailto:vinc@example.com')
+
+    expect(setContact(contactXCustom))
+    .to.equal('RSVP=FALSE;SCHEDULE-AGENT=X-CUSTOM;CN=m-vinc:mailto:vinc@example.com')
+  })
 })

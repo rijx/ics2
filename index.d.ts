@@ -40,10 +40,13 @@ export type Person = {
   dir?: string;
 };
 
+export type ScheduleAgent = 'SERVER' | 'CLIENT' | 'NONE' | string;
+
 export type Attendee = Person & {
   rsvp?: boolean;
   partstat?: ParticipationStatus;
   role?: ParticipationRole;
+  scheduleAgent?: ScheduleAgent;
 };
 
 export type ActionType = 'audio' | 'display' | 'email' | 'procedure';
